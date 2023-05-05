@@ -14,7 +14,7 @@
 
 
 
-# Jenkins-server post-lauch    
+### Jenkins-server post-lauch    
     - You'll have to ssh to the machine ssh -i /path/to/private/key ubuntu@Machine-ip-adress   
     - Run "systemctl jenkins status" to make sure jenkins is configured 
     - If so  copy the ip adress to the broweser knwonig taht the port is 8080
