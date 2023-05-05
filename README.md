@@ -1,7 +1,7 @@
 # Setting Up three machines in aws 
 
 ## Jenkins Server 
-## Jenkins-server pre-lauch
+### Jenkins-server pre-lauch
     - image:ubuntu
     - instance type: t2.small
     - keypair: creat your own
