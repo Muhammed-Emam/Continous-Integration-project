@@ -28,7 +28,7 @@
         - Build TimeStamp
 
 ## Nexus Server 
-# Nexus-server pre-lauch
+### Nexus-server pre-lauch
     - image:Amazon Linux2
     - instance type: t2.medium
     - keypair: creat your own
@@ -44,7 +44,7 @@
             - open port 8081 from jenkins security group (aritfact will be uploaded to nexus)
 
 
-# Nexus-server post-lauch    
+### Nexus-server post-lauch    
     - You'll have to ssh to the machine ssh -i /path/to/private/key ec2-user@Machine-ip-adress   
     - Run "systemctl nexus status" to make sure it is configured 
     - If so  copy the ip adress to the broweser knwonig taht the port is 8081
@@ -57,7 +57,7 @@
         4- maven2 (group) : just to group the three repos                
     
 ## SonarQube Server 
-# SonarQube pre-lauch
+### SonarQube pre-lauch
     - image:Amazon ubuntu 20
     - instance type: t2.medium
     - keypair: creat your own
@@ -74,7 +74,7 @@
             - open port 80 from jenkins security group (jenkins will upload test results here)
 
 
-# SonarQube post-lauch    
+### SonarQube post-lauch    
     - You'll have to ssh to the machine ssh -i /path/to/private/key ubuntu@Machine-ip-adress   
     - Run "systemctl sonarqube status" to make sure it is configured 
     - If so  copy the ip adress to the broweser knwonig taht the port is 80
