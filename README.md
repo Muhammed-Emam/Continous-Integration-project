@@ -195,11 +195,24 @@ __NOW Maven IS CONNECTED TO THE NEXUS SERVER__
 
 
 
-<!-- ### Add webhook      
+### Add webhook      
     - go to you repostory on github --> rep setting --> webhook --> add webhook:
         -Payload URL: http://ip-of-jenkins-machine:8080/github-webhook/ 
         - Content type: application/jason
-    - go to jenkins job  --> configure  --> build trigger --> github hook trigger for GITScm polling -->
+    - go to jenkins job  --> configure  --> build trigger --> github hook trigger for GITScm polling
+
+
+
+### Code Analysis with Sonarqube
+
+
+### Sonar Quality Gates
+
+
+### Publish Artifact to Nexus Repo
+
+
+### Slack Notification
 
 
  
@@ -211,7 +224,7 @@ __NOW Maven IS CONNECTED TO THE NEXUS SERVER__
 
 
 ####
-### Prerequisites
+### Prerequisites for app
 - JDK 1.8 or later
 - Maven 3 or later
 - MySQL 5.6 or later
