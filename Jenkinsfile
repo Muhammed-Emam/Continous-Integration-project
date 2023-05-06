@@ -37,7 +37,18 @@ pipeline {
                 }
             }
         }
-    }
+        
+        stage('UNIT TEST'){
+            steps {
+                sh 'mvn test'
+            }
+        }
+
+        stage ('CODE ANALYSIS WITH CHECKSTYLE'){
+            steps {
+                sh 'mvn checkstyle:checkstyle'
+            }
+        }
 }
 
 
