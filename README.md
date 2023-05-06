@@ -204,6 +204,16 @@ __NOW Maven IS CONNECTED TO THE NEXUS SERVER__
 
 
 ### Code Analysis with Sonarqube
+now after building and running the unit tests and the checkstyle analysis it generates reports we can check them by clicking on the build instance from the build history --> workspaces --> click on /var/lib/jenkins/vprofile-ci-pipeline --> target | now you will find checkstyle-result.xml & surefile-reports, but those are not human readable reports and here Sonarqube takes place.
+
+    - sonar scanner tool: so that jenkins can upload the test results to sonarqube
+        -dashboard --> manage jenkins --> global tool configuration --> sonarqube scanner --> add sonarqube scanner:
+            name: sonarscanner (choose yours)
+            install from maven central: (choose any version)
+        - dashboard --> manage jenkins --> configure system 
+
+    - sonarqube server information in jenkins so that jenkins know where to upload
+
 
 
 ### Sonar Quality Gates
