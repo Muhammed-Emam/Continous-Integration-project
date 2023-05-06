@@ -7,6 +7,8 @@ pipeline {
 
     environment {
         SNAP_REPO = "vprofile-snapshot"
+        NEXUS_USER = 'admin'
+        NEXUS_PASS = 'admin'
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
         NEXUS_URL = "3.88.70.53:8081"
