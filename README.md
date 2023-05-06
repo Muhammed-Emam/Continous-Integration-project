@@ -1,3 +1,4 @@
+
 # Setting Up three machines in aws 
 
 ## Jenkins Server 
@@ -165,6 +166,38 @@ we need to coonect maven to nexus so that maven gets the dependencies from nexus
     }                
 
 __NOW Maven IS CONNECTED TO THE NEXUS SERVER__
+
+
+### cinfigure github
+  - Manage Jenkins --> Manage Credentials --> Jenkins --> Global Credentilas(Unrestricted) --> Add Credentials:
+        - Kind: SSH Username with Private key
+        - ID: githublogin (pick you own naming)
+        - Description: githublogin (pick you own naming)
+        - username: git (pick you own naming)
+        - private key --> enter directly here --> put your private key (make sure you put the public key on hit hub)
+  - we have to ssh to our jenkins machine:
+    1- sudo -i
+    2- su - jenkins
+    3- git ls-remote -h -- git@github.com:Muhammed-Emam/Continous-Integration-project.git HEAD
+    (this will store the github identity permannetly in the machine we can check that by running cat .ssh/known_hosts) 
+
+
+### Building job
+    - new item
+        name: vprofile-ci-pipeline (pick you own naming)
+        pipline:
+            Definition: pipline script from SCM
+            SCM: git
+            Repository URL: git@github.com:Muhammed-Emam/Continous-Integration-project.git  (put yours)
+            Credentials: githublogin (the one we just create in the previous step)
+            Branches to build: main (depens onthe the branch your project located)
+            Script Path: Jenkinsfile
+
+
+ 
+
+
+
 
 
 
