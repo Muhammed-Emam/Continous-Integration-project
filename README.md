@@ -10,7 +10,7 @@
     - Security group:
         - inbound rules: 
             open port 22 to ssh from your public ip
-            open port 8080 from anywhere (to allow github to acees jenkins server)
+            open port 8080 from anywhere (to allow github to acees jenkins server to add the webhook which trigerrs jenkins server automatically whenever someone makes a commit)
             open port 8080 to SonarQube security group (as SonarQube will send test results to jenkins)
 
 
@@ -192,6 +192,13 @@ __NOW Maven IS CONNECTED TO THE NEXUS SERVER__
             Credentials: githublogin (the one we just create in the previous step)
             Branches to build: main (depens onthe the branch your project located)
             Script Path: Jenkinsfile
+
+
+
+### Add webhook      
+    - go to you repostory on github --> rep setting --> webhook --> add webhook:
+        -Payload URL: http://ip-of-jenkins-machine:8080/github-webhook/ 
+        - Content type: application/jason     
 
 
  
