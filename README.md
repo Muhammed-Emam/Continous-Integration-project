@@ -221,9 +221,6 @@ now after building and running the unit tests and the checkstyle analysis it gen
                 
     
 
-    - sonarqube server information in jenkins so that jenkins know where to upload
-
-
 
 ### Sonar Quality Gates
 
