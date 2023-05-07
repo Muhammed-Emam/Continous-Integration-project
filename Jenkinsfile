@@ -181,17 +181,17 @@ pipeline {
 
     }
     stages{
-        stage('Build'){
-            steps {
-                sh 'mvn  --global-settings settings.xml -DskipTests install'
-            }
-            post {
-                success {
-                    echo "Now Archiving"
-                    archiveArtifacts artifacts: '**/*.war'
-                }
-            }
-        }
+        // stage('Build'){
+        //     steps {
+        //         sh 'mvn  --global-settings settings.xml -DskipTests install'
+        //     }
+        //     post {
+        //         success {
+        //             echo "Now Archiving"
+        //             archiveArtifacts artifacts: '**/*.war'
+        //         }
+        //     }
+        // }
         
         stage('UNIT TEST'){
             steps {
