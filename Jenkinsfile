@@ -170,6 +170,8 @@ pipeline {
         NEXUSPORT = '8081'
 	    NEXUS_GRP_REPO    = "vprofile-maven-group"
         NEXUS_LOGIN = "nexuslogin"
+        SONNARSERVER = 'sonarscanner'
+        SONARSCANNER = 'sonarscanner'
         
         // ARTVERSION = "${env.BUILD_ID}"
         // NEXUS_LOGIN = 'nexuslogin'
@@ -208,11 +210,11 @@ pipeline {
         stage('CODE ANALYSIS with SONARQUBE') {
           
 		  environment {
-             scannerHome = tool 'sonarscanner'
+             scannerHome = tool "${SONNARSCANNER}"
           }
 
           steps {
-            withSonarQubeEnv('sonar-pro') {
+            withSonarQubeEnv("${SONNARSERVER}") {
                sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile \
                    -Dsonar.projectName=vprofile-repo \
                    -Dsonar.projectVersion=1.0 \
