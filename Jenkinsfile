@@ -210,7 +210,7 @@ pipeline {
         stage('CODE ANALYSIS with SONARQUBE') {
           
 		  environment {
-             scannerHome = tool "${SONNARSCANNER}"
+             scannerHome = tool "sonarscanner"
           }
 
           steps {
