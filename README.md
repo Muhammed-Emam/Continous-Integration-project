@@ -210,7 +210,16 @@ now after building and running the unit tests and the checkstyle analysis it gen
         -dashboard --> manage jenkins --> global tool configuration --> sonarqube scanner --> add sonarqube scanner:
             name: sonarscanner (choose yours)
             install from maven central: (choose any version)
-        - dashboard --> manage jenkins --> configure system 
+        - dashboard --> manage jenkins --> configure system:
+            -name: sonarscanner (choose yours)
+            -sonarserver: http://44.202.156.57:80
+            -sonar authencatuon token --> add --> jenkins -->
+                kind: secret text
+                ID:sonartoken
+                -secret: the (token we get from the next step)
+                    got to sonarqube server --> my account --> securing --> generate token
+                
+    
 
     - sonarqube server information in jenkins so that jenkins know where to upload
 
